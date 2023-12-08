@@ -1,0 +1,41 @@
+[
+  {
+    "gameNumber": 1,
+    "rounds": [
+      {"roundNumber": 1, "colors": {"red": 4, "blue": 3, "green": 0}},
+      {"roundNumber": 2, "colors": {"red": 1, "blue": 6, "green": 2}},
+      {"roundNumber": 3, "colors": {"red": 0, "blue": 0, "green": 2}}
+    ]
+  },
+  {
+    "gameNumber": 2,
+    "rounds": [
+      {"roundNumber": 1, "colors": {"red": 0, "blue": 1, "green": 2}},
+      {"roundNumber": 2, "colors": {"red": 1, "blue": 4, "green": 3}},
+      {"roundNumber": 3, "colors": {"red": 0, "blue": 1, "green": 1}}
+    ]
+  },
+  {
+    "gameNumber": 3,
+    "rounds": [
+      {"roundNumber": 1, "colors": {"red": 20, "blue": 6, "green": 8}},
+      {"roundNumber": 2, "colors": {"red": 4, "blue": 5, "green": 13}},
+      {"roundNumber": 3, "colors": {"red": 1, "blue": 0, "green": 5}}
+    ]
+  },
+  {
+    "gameNumber": 4,
+    "rounds": [
+      {"roundNumber": 1, "colors": {"red": 3, "blue": 6, "green": 1}},
+      {"roundNumber": 2, "colors": {"red": 6, "blue": 0, "green": 3}},
+      {"roundNumber": 3, "colors": {"red": 14, "blue": 15, "green": 3}}
+    ]
+  },
+  {
+    "gameNumber": 5,
+    "rounds": [
+      {"roundNumber": 1, "colors": {"red": 6, "blue": 1, "green": 3}},
+      {"roundNumber": 2, "colors": {"red": 1, "blue": 2, "green": 2}}
+    ]
+  }
+]
