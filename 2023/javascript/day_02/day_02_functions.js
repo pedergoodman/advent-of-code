@@ -59,7 +59,7 @@ class Round {
   colors = {
     red: 0,
     green: 0,
-    blue: 0
+    blue: 0,
   };
 
   setRed(redValue) {
@@ -75,12 +75,31 @@ class Round {
   }
 }
 
-
 function createGameObject(game) {
-  console.log(game);
-  
+  // console.log(game);
+  // Grabbing gameNumber & initial split of rounds
+  let gameNumber = Number(game.split(": ")[0].split(" ").filter(Number));
+  let roundsInitial = game.split(": ")[1].split("; ");
+  let roundsFinalSplit = [];
+
+  console.log(gameNumber);
+  // console.log(roundsInitial);
+  // console.log(roundsFinalSplit);
+
+  for (let i = 0; i < roundsInitial.length; i++) {
+    // create new Round 
+    const newRound = new Round(i + 1)
+    console.log(newRound);
+
+    // split colors into an array
+    let roundColors = roundsInitial[i].split(", ")
+    console.log(roundColors);
+  }
 }
 
-
+function extractRoundColors(roundData) {
+  console.log(roundData);
+  
+}
 
 export { Game, Round, createGameObject };
