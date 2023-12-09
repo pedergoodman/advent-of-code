@@ -3,66 +3,24 @@ import fs from 'fs';
 // import md document of data
 const markdown = fs.readFileSync('./2023/javascript/day_02/day_02_input.md', 'utf8');
 // separate each line into an array of strings
-const gameData = markdown.split('\n');
+const rawGameData = markdown.split('\n');
 // console.log(lines);
 
-for (const game of gameData) {
+
+
+for (const game of rawGameData) {
   createGameObject(game)
 }
 
 
 
-// * process for 1 Game (This will be a for loop)
-// index of game 
-let i = 69
-console.log(gameData[i]);
 
-
-
-// create new 
-
-
-
-  // extract color and and value
-  // for (const color of roundColors) {
-  //   console.log(color)
-  //   // check if it contains a color
-  //   let isRed = color.match("red")
-  //   let isGreen = color.match("green")
-  //   let isBlue = color.match("blue")
-    
-  //   // set color value in round data
-  //   if (isRed = "red") {
-  //     let redResult = Number(color.split(' ').filter(Number))
-  //     newRound.setRed(redResult)
-
-  //     console.log(`IT'S ${isRed}: ${redResult}, original: ${color}`);
-  //   }
-
-  //   if (isGreen = "green") {
-  //     let greenResult = Number(color.split(' ').filter(Number))
-  //     newRound.setGreen(greenResult)
-
-  //     console.log(`IT'S ${isGreen}: ${greenResult}, original: ${color}`);
-  //   }
-
-  //   if (isBlue = "blue") {
-  //     let blueResult = Number(color.split(' ').filter(Number))
-  //     newRound.setBlue(blueResult)
-
-  //     console.log(`IT'S ${isBlue}: ${blueResult}, original: ${color}`);
-  //   }
-    
   
   
-  // roundsFinalSplit.push(newRound) 
+  
 
 
-// console.log('gameNumber is:', gameNumber);
-// console.log('roundsFinalSplit is: ', roundsFinalSplit);
 
-// const newGame = new Game(gameNumber, roundsFinalSplit);
-// console.log('newGame is: \n', newGame);
 
 
 
