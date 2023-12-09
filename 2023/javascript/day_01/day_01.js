@@ -1,10 +1,10 @@
-// const fs = require('fs');
 import fs from 'fs';
 // import md document of data
-const markdown = fs.readFileSync('./data/day_01_input.md', 'utf8');
+const markdown = fs.readFileSync('./2023/javascript/day_01/day_01_input.md', 'utf8');
 // separate each line into an array of strings
 const lines = markdown.split('\n');
 // console.log(lines);
+
 
 const newSequenceKeys = []
 // let sequenceTotal = 0
