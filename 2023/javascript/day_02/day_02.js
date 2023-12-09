@@ -1,18 +1,26 @@
-import {Game, Round} from './day_02_functions.js'
-import testData from './day_02_dummy_data.json' assert { type: 'json' };
+import {Game, Round, createGameObject} from './day_02_functions.js'
 import fs from 'fs';
 // import md document of data
 const markdown = fs.readFileSync('./2023/javascript/day_02/day_02_input.md', 'utf8');
 // separate each line into an array of strings
-const lines = markdown.split('\n');
+const gameData = markdown.split('\n');
 // console.log(lines);
+
+for (const game of gameData) {
+  console.log(game);
+  createGameObject(game)
+}
+
+
 
 // * process for 1 Game (This will be a for loop)
 // index of game 
 let i = 69
+console.log(gameData[i]);
+
 // Grabbing gameNumber (will be +1 of index)
-let gameNumber = Number(lines[i].split(": ")[0].split(" ").filter(Number))
-let roundsInitialResult = lines[i].split(": ")[1].split("; ") //.split(",")
+let gameNumber = Number(gameData[i].split(": ")[0].split(" ").filter(Number))
+let roundsInitialResult = gameData[i].split(": ")[1].split("; ") //.split(",")
 let roundsFinalSplit = []
 
 // create new 
@@ -24,9 +32,10 @@ for (let i = 0; i < roundsInitialResult.length; i++) {
   // split colors into an array
   let roundColors = roundsInitialResult[i].split(", ")
   // console.log(roundColors);
-
+/*
   // extract color and and value
   for (const color of roundColors) {
+    console.log(color)
     // check if it contains a color
     let isRed = color.match("red")
     let isGreen = color.match("green")
@@ -37,25 +46,25 @@ for (let i = 0; i < roundsInitialResult.length; i++) {
       let redResult = Number(color.split(' ').filter(Number))
       newRound.setRed(redResult)
 
-      // console.log(`IT'S ${isRed}: ${redResult}, original: ${color}`);
+      console.log(`IT'S ${isRed}: ${redResult}, original: ${color}`);
     }
 
     if (isGreen = "green") {
       let greenResult = Number(color.split(' ').filter(Number))
       newRound.setGreen(greenResult)
 
-      // console.log(`IT'S ${isGreen}: ${greenResult}, original: ${color}`);
+      console.log(`IT'S ${isGreen}: ${greenResult}, original: ${color}`);
     }
 
     if (isBlue = "blue") {
       let blueResult = Number(color.split(' ').filter(Number))
       newRound.setBlue(blueResult)
 
-      // console.log(`IT'S ${isBlue}: ${blueResult}, original: ${color}`);
+      console.log(`IT'S ${isBlue}: ${blueResult}, original: ${color}`);
     }
     
   }
-  
+  */
   
   roundsFinalSplit.push(newRound) 
 }

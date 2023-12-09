@@ -76,10 +76,11 @@ class Round {
 }
 
 
-function createGameObject() {
+function createGameObject(game) {
+  console.log(game);
   
 }
 
 
 
-export { Game, Round, };
+export { Game, Round, createGameObject };
