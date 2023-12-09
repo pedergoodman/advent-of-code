@@ -99,6 +99,7 @@ function createGameObject(game) {
 
   const newGame = new Game(gameNumber, roundsFormatted);
 
+  return newGame;
   // console.log("\nFinal Form");
   // console.log(newGame.gameNumber);
   // console.log(newGame.rounds);

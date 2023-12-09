@@ -1,73 +1,65 @@
-import {Game, Round, createGameObject} from './day_02_functions.js'
-import fs from 'fs';
+import { Game, Round, createGameObject } from "./day_02_functions.js";
+import fs from "fs";
+
 // import md document of data
-const markdown = fs.readFileSync('./2023/javascript/day_02/day_02_input.md', 'utf8');
+const markdown = fs.readFileSync(
+  "./2023/javascript/day_02/day_02_input.md",
+  "utf8"
+);
 // separate each line into an array of strings
-const rawGameData = markdown.split('\n');
-// console.log(lines);
+const rawGameData = markdown.split("\n");
+// array to store formatted game data
+const formattedGameData = [];
+// array to store successful games
+let successfulGames = 0;
 
-
-
+// create formatted game data
 for (const game of rawGameData) {
-  createGameObject(game)
+  formattedGameData.push(createGameObject(game));
+  // console.log(createGameObject(game));
 }
 
+// max possible values for colors
+let maxRed = 12;
+let maxGreen = 13;
+let maxBlue = 14;
+
+// fin which games were possible given the max possible values
+for (const game of formattedGameData) {
+  // console.log('highest red is:', game.highestRed());
+  // console.log('highest green is:', game.highestGreen());
+  // console.log('highest blue is:', game.highestBlue());
+
+  // console.log(game.rounds);
+  console.log("highestRed is:", game.highestRed());
+  console.log("highestGreen is:", game.highestGreen());
+  console.log("highestBlue is:", game.highestBlue());
+
+  let highestRed = game.highestRed();
+  let highestGreen = game.highestGreen();
+  let highestBlue = game.highestBlue();
+
+  if (maxRed < highestRed) {
+    console.log(
+      `FAIL: # of available reds (${maxRed}) is less than the highest amount of reds pulled (${highestRed})`
+    );
+  } else if (maxGreen < highestGreen) {
+    console.log(
+      `FAIL: # of available greens (${maxGreen}) is less than the highest amount of greens pulled (${highestGreen})`
+    );
+  } else if (maxBlue < highestBlue) {
+    console.log(
+      `FAIL: # of available blues (${maxBlue}) is less than the highest amount of blues pulled (${highestBlue})`
+    );
+  } else {
+    console.log(game.gameNumber);
+
+    successfulGames += game.gameNumber;
+    // return game.gameNumber;
+  }
+}
+
+console.log('\n\nsuccessfulGames = ', successfulGames);
 
 
 
-  
-  
-  
-
-
-
-
-
-
-
-
-
-/*
-Want to know which games would **have been possible** if the bag contained only:
-  12 red cubes
-  13 green cubes
-  14 blue cubes
-
-/*
-1. Split lines into readable values
-  1. separate lines into an array
-  2. split on "Game #: "
-  - set to object {"gameNumber": ##}
-  3. split everything after "Game # " on "; "
-  4. for each item in resulting array
-    - record roundNumber
-    - split on "## text" pattern
-    - set color to "RGB: 2" in constructor
-  5. loop through results to calculate total
-
-2. Check values for RGB
-  if the number of cube that were pulled out is GREATER THAN the "test value", 
-  then the game wasn't possible
-
-2. 
-*/
-
-
-
-
-/*
-* create new Game, access highest values 
-const gameOne = new Game(testData[0].gameNumber, testData[0].rounds)
-
-console.log(gameOne);
-
-
-let redResult = gameOne.highestRed()
-let greenResult = gameOne.highestGreen()
-let blueResult = gameOne.highestBlue()
-
-console.log('gameNumber is: ', testData[0].gameNumber);
-console.log('redResult is: ', redResult);
-console.log('greenResult is: ', greenResult);
-console.log('blueResult is: ', blueResult);
-*/
