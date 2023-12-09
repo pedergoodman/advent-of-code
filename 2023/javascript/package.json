@@ -5,10 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "day": "nodeman ./2023/javascript/day_02/day_02.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^3.0.1"
   }
 }
