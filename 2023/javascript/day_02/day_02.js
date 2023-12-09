@@ -31,9 +31,9 @@ for (const game of formattedGameData) {
   // console.log('highest blue is:', game.highestBlue());
 
   // console.log(game.rounds);
-  console.log("highestRed is:", game.highestRed());
-  console.log("highestGreen is:", game.highestGreen());
-  console.log("highestBlue is:", game.highestBlue());
+  // console.log("highestRed is:", game.highestRed());
+  // console.log("highestGreen is:", game.highestGreen());
+  // console.log("highestBlue is:", game.highestBlue());
 
   let highestRed = game.highestRed();
   let highestGreen = game.highestGreen();
@@ -59,7 +59,24 @@ for (const game of formattedGameData) {
   }
 }
 
-console.log('\n\nsuccessfulGames = ', successfulGames);
+console.log('\nsuccessfulGames = ', successfulGames, "\n");
 
 
 
+// finding the minimum set of cubes needed per game, & cubing them
+let totalCubedResults = 0;
+
+for (const game of formattedGameData) {
+  
+  let highestRed = game.highestRed();
+  let highestGreen = game.highestGreen();
+  let highestBlue = game.highestBlue();
+
+  // console.log(`Game: ${game.gameNumber}:`, highestRed, highestGreen, highestBlue);
+  // console.log(`Game: ${game.gameNumber}:`, highestRed*highestGreen*highestBlue);
+  
+  totalCubedResults += highestRed*highestGreen*highestBlue
+
+}
+
+console.log('totalCubedResults = ', totalCubedResults, "\n");
