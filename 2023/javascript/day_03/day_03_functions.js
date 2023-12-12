@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NumberData, SymbolData } from "./day_03_classes.js";
 
 // sort for numbers in string
@@ -18,6 +19,10 @@ function filterNumbers(stringToSearch) {
     // push to array
     resultArray.push(numberData);
   }
+
+  // console.log(resultArray);
+  return resultArray
+
 } // END filterNumbers
 
 function filterSymbols(stringToSearch) {
@@ -39,6 +44,10 @@ function filterSymbols(stringToSearch) {
     // push to resultArray
     resultArray.push(symbolData);
   }
+
+  // console.log(resultArray);
+  return resultArray
+
 } // END filterSymbols
 
 export {
