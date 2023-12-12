@@ -6,36 +6,38 @@ const markdown = fs.readFileSync(
   "utf8"
 );
 
+// split lines into string array items
 const rawEngineData = markdown.split("\n");
-
-console.log(rawEngineData[4]);
-
-let test = rawEngineData[4].match(/\d+/g)
+// console.log(rawEngineData[4]);
 
 
+
+
+// to pull number data from 1 row
+// filterNumberData
+let filterNums = /\d+/g
+let filterSymbols = /[^0-9.]/g
 let array = []
-let re = /\d+/g
 let match 
 
-while ((match = re.exec(rawEngineData[4])) != null) {
+while ((match = filterSymbols.exec(rawEngineData[4])) != null) {
   
-  console.log(`match is: `, match);
+  // console.log(`match is: `, match);
   console.log(`Found ${match[0]} at index ${match.index}`);
-
+// data to pull from match
 const buildObject = {
   value: match[0],
   index: match.index,
   length: match[0].length
 }
-
-// console.log(buildObject);
-
+// push to array
   array.push(buildObject)
 }
 
 console.log(array);
+console.log(filterSymbols.exec(rawEngineData[4]));
 
-console.log(test);
+
 
 
 
