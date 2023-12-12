@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 // import md document of data
 const markdown = fs.readFileSync('./2023/javascript/day_01/day_01_input.md', 'utf8');

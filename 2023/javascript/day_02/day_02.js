@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Game, Round, createGameObject } from "./day_02_functions.js";
 import fs from "fs";
 

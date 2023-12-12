@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Game Data Constructor
 class Game {
   constructor(game, rounds) {
@@ -8,8 +10,8 @@ class Game {
   rounds;
 
   highestRed() {
-    let highest = 0;
 
+    let highest = 0;
     for (const round of this.rounds) {
       let roundRed = round.colors.red;
 
