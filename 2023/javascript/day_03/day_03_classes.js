@@ -19,3 +19,22 @@ class EngineRow {
     this.colors.blue = blueValue;
   }
 }
+
+class NumberData {
+  value;
+index;
+length;
+
+}
+
+class SymbolData {
+  value;
+index;
+length;
+
+}
+
+export {
+  NumberData,
+  SymbolData
+}

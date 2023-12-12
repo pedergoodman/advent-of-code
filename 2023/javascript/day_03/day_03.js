@@ -1,5 +1,5 @@
 import fs from "fs";
-
+import { filterNumbers, filterSymbols } from "./day_03_functions.js";
 // import md document of data
 const markdown = fs.readFileSync(
   "./2023/javascript/day_03/day_03_input.md",
@@ -10,32 +10,15 @@ const markdown = fs.readFileSync(
 const rawEngineData = markdown.split("\n");
 // console.log(rawEngineData[4]);
 
+filterNumbers(rawEngineData[78])
+filterSymbols(rawEngineData[78])
 
-
+for (const line of rawEngineData) {
+  filterSymbols(line)
+}
 
 // to pull number data from 1 row
 // filterNumberData
-let filterNums = /\d+/g
-let filterSymbols = /[^0-9.]/g
-let array = []
-let match 
-
-while ((match = filterSymbols.exec(rawEngineData[4])) != null) {
-  
-  // console.log(`match is: `, match);
-  console.log(`Found ${match[0]} at index ${match.index}`);
-// data to pull from match
-const buildObject = {
-  value: match[0],
-  index: match.index,
-  length: match[0].length
-}
-// push to array
-  array.push(buildObject)
-}
-
-console.log(array);
-console.log(filterSymbols.exec(rawEngineData[4]));
 
 
 
