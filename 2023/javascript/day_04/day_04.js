@@ -13,5 +13,42 @@ const rawGameData = rawMarkdown.split("\n");
 const formattedGameData = formatData(rawGameData);
 // console.log(formattedGameData);
 
+// RESULTS
+console.log('Winning count total is: ', countWinningGames(formattedGameData));
+
+
+// PART 1
+function countWinningGames(formattedGameData) {
+  let winningCountTotal = 0;
+  let loops = 1 // ! for testing
+
+  for (const game of formattedGameData) {
+    let winningCount = 0;
+    let result = []; 
+
+    // ! for testing
+    if(loops > 15){break}
+    console.log('Game ' + loops);
+    loops++
+    // ! END for testing
+
+    let winningNumbers = game.winningNumbers;
+    let haveNumbers = game.numbersHave;
+
+    // check winning
+    winningNumbers.forEach(winningNum => {
+      haveNumbers.includes(winningNum) && result.push(winningNum);
+    });
+
+    console.log('Number of Wins: ', result.length);
+
+
+
+
+
+    winningCountTotal += 0;
+  }
+  return winningCountTotal;
+}
 
 

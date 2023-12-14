@@ -23,7 +23,7 @@ function formatData(GameData) {
     result.push(formattedGame);
   }
   
-  console.log(result);
+  // console.log(result);
   return result;
 }
 
