@@ -27,4 +27,19 @@ function formatData(GameData) {
   return result;
 }
 
-export { formatData };
+
+const countPoints = (matches) => {
+  let points = 0;
+
+  for (const items of matches) {
+    if (points === 0) {
+      points = 1;
+    } else {
+      points = points * 2;
+    }
+  }
+  return points;
+}
+
+
+export { formatData, countPoints };
