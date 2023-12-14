@@ -32,7 +32,6 @@ for (let i = 0; i < rawEngineData.length; i++) {
 // log the part number total
 // console.log("Part Number total is: ", findPartNumbers());
 
-
 for (let index = 0; index < 6; index++) {
   console.log(rawEngineData[index]);
 }
@@ -43,7 +42,6 @@ console.log("Gear Ratio total is: ", findGearRatios());
 for (let index = 0; index < 6; index++) {
   console.log(rawEngineData[index]);
 }
-
 
 // PART 1
 
@@ -113,13 +111,13 @@ function findGearRatios() {
   let gearRatioTotal = 0;
 
   // for each ROW
-  // filteredEngineData.length
-  for (let i = 0; i < 3; i++) {
+  
+  for (let i = 0; i < filteredEngineData.length; i++) {
     let currentRow = filteredEngineData[i];
     let currentRowNumbers = filteredEngineData[i].values;
     let previousRowNumbers = [];
     let nexRowNumbers = [];
-    
+
     // previous row stays an empty array if index is less than 0
     if (i - 1 >= 0) {
       previousRowNumbers = filteredEngineData[i - 1].values;
@@ -134,7 +132,7 @@ function findGearRatios() {
     // console.log('previousRowNumbers is: ', previousRowNumbers);
     // console.log('currentRowNumbers is: ', currentRowNumbers);
     // console.log('nexRowNumbers is: ', nexRowNumbers);
-    
+
     // merge all symbols to compare with numbers
     let numbersToCheck = [
       ...previousRowNumbers,
@@ -143,38 +141,55 @@ function findGearRatios() {
     ];
     // console.log(numbersToCheck);
 
-const symbolsToCheck = currentRow.symbols.filter(symbol => symbol.value === '*')
-// console.log('checking FILTERED row symbols @ lvl-1: ', symbolsToCheck);
+    const symbolsToCheck = currentRow.symbols.filter(
+      symbol => symbol.value === "*"
+    );
+    // console.log('checking FILTERED row symbols @ lvl-1: ', symbolsToCheck);
 
-
-    
-    // loop through the symbol values and see what numbers are touching a '*' symbol
-    console.log(`Row ${i+1}`);
+    // loop through the symbols and see what numbers are touching a '*' symbol
+    console.log(`Row ${i + 1}`);
+    let count = 0;
     for (const symbol of symbolsToCheck) {
-      // console.log('symbol in symbolsToCheck: ', symbol);
-      let symbolIndex = symbol.index
+      console.log(`Checking Symbol ${count+1}`);
+      count++
+
+      let symbolIndex = symbol.index;
+      let numbersTouchingGear = []
       
-      // checking if a number touches a symbol
+      // if a number is touching a symbol, add it to the array
       for (const number of numbersToCheck) {
-        // console.log(symbol);
+        // console.log(number);
         let numberValue = number.value;
         let startIndex = number.index - 1;
         let endingIndex = number.index + number.length;
-        
-        
+
         if (symbolIndex >= startIndex && symbolIndex <= endingIndex) {
-          console.log(`they're touching!!! SYMBOL index is:`, symbolIndex);
-          console.log(`NUMBER index range is ${startIndex}-${endingIndex}`);
-          console.log(`they're touching!!! Value is:`, numberValue);
+          // console.log(`they're touching!!! SYMBOL index is:`, symbolIndex);
+          // console.log(`NUMBER index range is ${startIndex}-${endingIndex}`);
+          // console.log(`they're touching!!! Value is:`, numberValue);
 
+          // push to numbersTouchingGear array
 
-          //
-          gearRatioTotal += Number(numberValue);
+          numbersTouchingGear.push(numberValue)
         }
-      } 
+      }
+      console.log(`Symbol ${count+1} Check complete!`);
+      
+      // check if is a vali
+      if (numbersTouchingGear.length === 2) {
+        // console.log('Valid Gear! ', numbersTouchingGear, '\n');
+        
+        const gearRatio = numbersTouchingGear[0] * numbersTouchingGear[1]
+        console.log('Valid Gear! ratio is: ', gearRatio, '\n');
+        gearRatioTotal += Number(gearRatio);
+
+      } else {
+        console.log('No Valid Gear!\n');
+        
+      }
+
 
     }
-    
   }
 
   return gearRatioTotal;
