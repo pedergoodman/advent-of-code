@@ -1,7 +1,10 @@
 // @ts-nocheck
 
-console.log("hello!");
 
+class Game {
+  gameNumber;
+  numbersHave;
+  winningNumbers;
+}
 
-
-
+export { Game };
