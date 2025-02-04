@@ -1,8 +1,9 @@
-package src.main.java.com.advent2024.day01;
+package java.src.challenges;
 
+import java.src.utils.Day;
+import java.src.utils.ParseInput;
 import java.util.List;
-import src.main.java.com.advent2024.utils.Day;
-import src.main.java.com.advent2024.utils.ParseInput;
+
 
 public class JavaDayOne implements Day {
 
@@ -10,7 +11,7 @@ public class JavaDayOne implements Day {
     public void runPuzzleOne() {
         System.out.println("Running Day One, Puzzle One");
         // Read the input file and parse data
-        List<int[]> puzzleInputList = ParseInput.parseListWithTreeSpaces("/Users/yorkmacbook030/Desktop/Repos/Personal/advent-of-code/2024/src/main/java/com/advent2024/day01/day01-puzzleInput.txt");
+        List<int[]> puzzleInputList = ParseInput.parseListWithTreeSpaces("src/challenges/day01/day01-puzzleInput.txt");
         
 
         // Add logic for Puzzle One

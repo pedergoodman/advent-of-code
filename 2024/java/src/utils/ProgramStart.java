@@ -1,12 +1,12 @@
-package src.main.java.com.advent2024.utils;
+package java.src.utils;
 
+import java.src.challenges.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import src.main.java.com.advent2024.day01.JavaDayOne;
-import src.main.java.com.advent2024.day02.JavaDayTwo;
+// import java.src.challenges.*;
 
 public class ProgramStart {
 

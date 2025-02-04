@@ -1,4 +1,4 @@
-package src.main.java.com.advent2024.utils;
+package java.src.utils;
 
 public interface Day {
 

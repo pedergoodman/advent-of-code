@@ -1,6 +1,6 @@
-package src.main.java.com.advent2024.day02;
+package java.src.challenges;
 
-import src.main.java.com.advent2024.utils.Day;
+import java.src.utils.Day;
 
 public class JavaDayTwo implements Day {
 
